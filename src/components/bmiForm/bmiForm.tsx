@@ -170,6 +170,7 @@ export default function BmiForm() {
           <span
             className={styles.bmiCalc__units_checked}
             tabIndex={0}
+            role="button"
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 setIsMetric(true);
@@ -191,6 +192,7 @@ export default function BmiForm() {
           <span
             className={styles.bmiCalc__units_checked}
             tabIndex={0}
+            role="button"
             onKeyDown={(e) => {
               if (e.key === "Enter") {
                 setIsMetric(false);
