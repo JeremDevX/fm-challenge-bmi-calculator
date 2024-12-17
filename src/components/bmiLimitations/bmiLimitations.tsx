@@ -27,7 +27,7 @@ export default function BmiLimitations() {
               height={32}
               className={styles.bmiLimitationsCard__header_icon}
             />
-            <h2 className={styles.bmiLimitationsCard_header_title}>Gender</h2>
+            <h3 className={styles.bmiLimitationsCard_header_title}>Gender</h3>
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             The development and body fat composition of girls and boys vary with
@@ -46,7 +46,7 @@ export default function BmiLimitations() {
               height={32}
               className={styles.bmiLimitationsCard__header_icon}
             />
-            <h2 className={styles.bmiLimitationsCard_header_title}>Age</h2>
+            <h3 className={styles.bmiLimitationsCard_header_title}>Age</h3>
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             In aging individuals, increased body fat and muscle loss may cause
@@ -64,7 +64,7 @@ export default function BmiLimitations() {
               height={32}
               className={styles.bmiLimitationsCard__header_icon}
             />
-            <h2 className={styles.bmiLimitationsCard_header_title}>Muscle</h2>
+            <h3 className={styles.bmiLimitationsCard_header_title}>Muscle</h3>
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             BMI may misclassify muscular individuals as overweight or obese, as
@@ -83,9 +83,9 @@ export default function BmiLimitations() {
               height={32}
               className={styles.bmiLimitationsCard__header_icon}
             />
-            <h2 className={styles.bmiLimitationsCard_header_title}>
+            <h3 className={styles.bmiLimitationsCard_header_title}>
               Pregnancy
-            </h2>
+            </h3>
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             Expectant mothers experience weight gain due to their growing baby.
@@ -104,7 +104,7 @@ export default function BmiLimitations() {
               height={32}
               className={styles.bmiLimitationsCard__header_icon}
             />
-            <h2 className={styles.bmiLimitationsCard_header_title}>Race</h2>
+            <h3 className={styles.bmiLimitationsCard_header_title}>Race</h3>
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             Certain health concerns may affect individuals of some Black and

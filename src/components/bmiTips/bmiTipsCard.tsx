@@ -15,7 +15,7 @@ export default function BmiTipsCard(props: BmiTipCardProps) {
     <div className={styles.bmiTipsCard}>
       <Image src={iconSrc} alt={altText} width={64} height={64} />
       <div className={styles.bmiTipsCard__content}>
-        <h2 className={styles.bmiTipsCard__content_title}>{title}</h2>
+        <h3 className={styles.bmiTipsCard__content_title}>{title}</h3>
         <p className={styles.bmiTipsCard__content_description}>{description}</p>
       </div>
     </div>

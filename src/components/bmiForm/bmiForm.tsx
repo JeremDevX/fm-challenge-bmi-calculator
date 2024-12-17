@@ -82,7 +82,7 @@ export default function BmiForm() {
     }
   };
 
-  const handleChangeUnit = () => {
+  const handleUnitChange = () => {
     setIsMetric(!isMetric);
     setBmi("");
     setHeightCmValue(0);
@@ -154,18 +154,28 @@ export default function BmiForm() {
 
   return (
     <div className={styles.bmiCalc}>
-      <h3 className={styles.bmiCalc__title}>Enter your details below</h3>
-      <div className={styles.bmiCalc__units}>
+      <h2 className={styles.bmiCalc__title}>Enter your details below</h2>
+      <fieldset className={styles.bmiCalc__units}>
+        <legend>Unit selection</legend>
         <label htmlFor="metric" className={styles.bmiCalc__units_label}>
           <input
             type="radio"
             name="unit"
             id="metric"
             className={styles.bmiCalc__units_input}
-            onChange={handleChangeUnit}
+            onChange={handleUnitChange}
             checked={isMetric}
           />
-          <span className={styles.bmiCalc__units_checked}></span>
+          <span
+            className={styles.bmiCalc__units_checked}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setIsMetric(true);
+              }
+            }}
+            aria-label="Metric"
+          ></span>
           Metric
         </label>
         <label htmlFor="imperial" className={styles.bmiCalc__units_label}>
@@ -174,12 +184,22 @@ export default function BmiForm() {
             name="unit"
             id="imperial"
             className={styles.bmiCalc__units_input}
-            onChange={handleChangeUnit}
+            onChange={handleUnitChange}
+            checked={!isMetric}
           />
-          <span className={styles.bmiCalc__units_checked}></span>
+          <span
+            className={styles.bmiCalc__units_checked}
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                setIsMetric(false);
+              }
+            }}
+            aria-label="Imperial"
+          ></span>
           Imperial
         </label>
-      </div>
+      </fieldset>
       <div
         className={`${styles.bmiCalc__details} ${
           isMetric
@@ -292,7 +312,7 @@ function BmiFormMessage(props: {
       className={`${styles.bmiCalc__result} ${styles.bmiCalc__result_noData}`}
     >
       <div className={styles.bmiCalc__result_bmi}>
-        <p className={styles.bmiCalc__result_welcome}>Welcome</p>
+        <h3 className={styles.bmiCalc__result_welcome}>Welcome</h3>
       </div>
       <p className={styles.bmiCalc__result_message}>
         Enter your height and weight and you'll see your BMI result here.

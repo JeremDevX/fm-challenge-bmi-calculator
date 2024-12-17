@@ -7,21 +7,21 @@ import BmiLimitations from "@/components/bmiLimitations/bmiLimitations";
 const bmiTipsData = [
   {
     icon: "/images/icon-eating.svg",
-    altText: "Healthy eating icon",
+    altText: "Healthy eating icon which represents a bowl",
     title: "Healthy eating",
     description:
       "Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood.",
   },
   {
     icon: "/images/icon-exercise.svg",
-    altText: "Regular exercise icon",
+    altText: "Regular exercise icon which represents a dumbbell",
     title: "Regular exercise",
     description:
       "Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.",
   },
   {
     icon: "/images/icon-sleep.svg",
-    altText: "Adequate sleep icon",
+    altText: "Adequate sleep icon which represents a crescent moon",
     title: "Adequate sleep",
     description:
       "Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.",
@@ -78,7 +78,7 @@ export default function Page() {
           <BmiTipsCard
             key={index}
             iconSrc={tip.icon}
-            altText={tip.title}
+            altText={tip.altText}
             title={tip.title}
             description={tip.description}
           />

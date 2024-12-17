@@ -42,3 +42,11 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+fieldset {
+  border: none;
+}
+
+legend {
+  display: none;
+}
