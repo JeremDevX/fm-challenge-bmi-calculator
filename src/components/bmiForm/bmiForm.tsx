@@ -222,7 +222,6 @@ export default function BmiForm() {
                 <input
                   type="number"
                   id={input.id}
-                  maxLength={5}
                   placeholder="0"
                   className={styles.bmiCalc__details_input}
                   autoComplete="off"
@@ -249,7 +248,6 @@ export default function BmiForm() {
                 <input
                   type="number"
                   id={input.id}
-                  maxLength={5}
                   placeholder="0"
                   className={styles.bmiCalc__details_input}
                   autoComplete="off"
