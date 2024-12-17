@@ -285,7 +285,7 @@ function BmiFormMessage(props: {
     if (Number(bmi) < 18.5 || bmi === "10 -") {
       weightClassification = "underweight";
     } else if (Number(bmi) < 24.9) {
-      weightClassification = "ahealthy weight";
+      weightClassification = "a healthy weight";
     } else if (Number(bmi) < 29.9) {
       weightClassification = "overweight";
     } else {
