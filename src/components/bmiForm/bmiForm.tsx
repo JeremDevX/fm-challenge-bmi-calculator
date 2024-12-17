@@ -115,8 +115,8 @@ export default function BmiForm() {
 
   const calculateBmi = (isMetric: boolean) => {
     let bmi = 0;
-    let totalLbs = convertToLbs(weightStValue, weightLbsValue);
-    let totalIn = convertToIn(heightFtValue, heightInValue);
+    const totalLbs = convertToLbs(weightStValue, weightLbsValue);
+    const totalIn = convertToIn(heightFtValue, heightInValue);
     if (isMetric) {
       bmi = weightKgValue / (heightCmValue / 100) ** 2;
       setIdealMinWeight(18.5 * (heightCmValue / 100) ** 2);
@@ -150,6 +150,7 @@ export default function BmiForm() {
     weightKgValue,
     weightStValue,
     weightLbsValue,
+    calculateBmi,
   ]);
 
   return (
@@ -299,8 +300,8 @@ function BmiFormMessage(props: {
         <p className={styles.bmiCalc__result_value}>{bmi}</p>
       </div>
       <p className={styles.bmiCalc__result_message}>
-        Your BMI suggests you're {weightClassification}. Your ideal weight is
-        between{" "}
+        Your BMI suggests you&apos;re {weightClassification}. Your ideal weight
+        is between{" "}
         <span className={styles.bmiCalc__result_ideal}>
           {props.idealMinWeight.toFixed(2)} - {props.idealMaxWeight.toFixed(2)}{" "}
           {props.isMetric ? "kg" : "lbs"}.
@@ -315,7 +316,7 @@ function BmiFormMessage(props: {
         <h3 className={styles.bmiCalc__result_welcome}>Welcome</h3>
       </div>
       <p className={styles.bmiCalc__result_message}>
-        Enter your height and weight and you'll see your BMI result here.
+        Enter your height and weight and you&apos;ll see your BMI result here.
       </p>
     </div>
   );

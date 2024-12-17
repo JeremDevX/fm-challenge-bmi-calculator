@@ -31,7 +31,7 @@ export default function BmiLimitations() {
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             The development and body fat composition of girls and boys vary with
-            age. Consequently, a child's age and gender are considered when
+            age. Consequently, a child&apos;s age and gender are considered when
             evaluating their BMI.
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function BmiLimitations() {
           </div>
           <p className={styles.bmiLimitationsCard__description}>
             BMI may misclassify muscular individuals as overweight or obese, as
-            it doesn't differentiate muscle from fat.
+            it doesn&apos;t differentiate muscle from fat.
           </p>
         </div>
 
