@@ -1,0 +1,41 @@
+@use "../../styles/mixins" as mix;
+
+.bmiTipsCard {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+  padding: 0 1.125rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+
+    gap: 2.5rem;
+    max-width: 686px;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 365px;
+    padding: 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+    &_title {
+      @include mix.heading-md;
+    }
+
+    &_description {
+      @include mix.body-md;
+      color: var(--dark-electric-blue);
+    }
+  }
+}

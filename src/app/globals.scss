@@ -1,0 +1,44 @@
+:root {
+  --blue: #345ff6;
+  --gun-metal: #253347;
+  --dark-electric-blue: #5e6e85;
+  --pure-white: #ffffff;
+
+  --bg-gradient: linear-gradient(-90deg, #d6e6fe, #d6e6fe00);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+
+  min-height: 100vh;
+  margin-bottom: 5rem;
+  color: var(--gun-metal);
+  background-color: var(--pure-white);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  gap: 3rem;
+  max-width: 1440px;
+  width: 100%;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}

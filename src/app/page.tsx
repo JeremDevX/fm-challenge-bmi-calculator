@@ -1,95 +1,90 @@
+import BmiForm from "@/components/bmiForm/bmiForm";
+import styles from "./page.module.scss";
 import Image from "next/image";
-import styles from "./page.module.css";
+import BmiTipsCard from "@/components/bmiTips/bmiTipsCard";
+import BmiLimitations from "@/components/bmiLimitations/bmiLimitations";
 
-export default function Home() {
+const bmiTipsData = [
+  {
+    icon: "/images/icon-eating.svg",
+    altText: "Healthy eating icon",
+    title: "Healthy eating",
+    description:
+      "Healthy eating promotes weight control, disease prevention, better digestion, immunity, mental clarity, and mood.",
+  },
+  {
+    icon: "/images/icon-exercise.svg",
+    altText: "Regular exercise icon",
+    title: "Regular exercise",
+    description:
+      "Exercise improves fitness, aids weight control, elevates mood, and reduces disease risk, fostering wellness and longevity.",
+  },
+  {
+    icon: "/images/icon-sleep.svg",
+    altText: "Adequate sleep icon",
+    title: "Adequate sleep",
+    description:
+      "Sleep enhances mental clarity, emotional stability, and physical wellness, promoting overall restoration and rejuvenation.",
+  },
+];
+
+export default function Page() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
+    <main>
+      <section className={styles.hero}>
+        <div className={styles.hero__heading}>
+          <Image
+            src="/images/logo.svg"
+            alt=""
+            className={styles.hero__logo}
+            width={40}
+            height={40}
+          />
+          <h1 className={styles.hero__title}>
+            Body Mass <span>Index Calculator</span>
+          </h1>
+          <p className={styles.hero__description}>
+            Better understand your weight in relation to your height using our
+            body mass index (BM) calculator. While BMI is not the sole
+            determinant of a healthy weight, it offers a valuable starting point
+            to evaluate your overall health and well-being.
+          </p>
         </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+        <BmiForm />
+      </section>
+      <section className={styles.bmiInfo}>
+        <img
+          src="/images/image-man-eating.webp"
+          alt="Man eating a sushi roll"
+          className={styles.bmiInfo__image}
+        />
+        <div className={styles.bmiInfo__content}>
+          <h2 className={styles.bmiInfo__content_title}>
+            What your BMI result means
+          </h2>
+          <p className={styles.bmiInfo__content_description}>
+            A BMI range of 18.5 to 24.9 is considered a 'healthy weight.'
+            Maintaining a healthy weight may lower your chances of experiencing
+            health issues later on, such as obesity and type 2 diabetes. Aim for
+            a nutritious diet with reduced fat and sugar content, incorporating
+            ample fruits and vegetables. Additionally, strive for regular
+            physical activity, ideally about 30 minutes daily for five days a
+            week.
+          </p>
+        </div>
+      </section>
+      <section className={styles.bmiTipsSection}>
+        {bmiTipsData.map((tip, index) => (
+          <BmiTipsCard
+            key={index}
+            iconSrc={tip.icon}
+            altText={tip.title}
+            title={tip.title}
+            description={tip.description}
           />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        ))}
+      </section>
+      <BmiLimitations />
+    </main>
   );
 }

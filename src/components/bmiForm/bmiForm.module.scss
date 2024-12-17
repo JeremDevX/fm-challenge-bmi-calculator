@@ -1,0 +1,219 @@
+@use "../../styles/mixins" as mix;
+@use "sass:color";
+
+.bmiCalc {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+  padding: 1.5rem;
+  background-color: var(--pure-white);
+  border-radius: 1rem;
+  filter: drop-shadow(16px 32px 56px #8faecf40);
+
+  @media (min-width: 768px) {
+    gap: 2rem;
+    padding: 2rem;
+
+    max-width: 686px;
+  }
+
+  @media (min-width: 1024px) {
+    flex: 1;
+    max-width: 564px;
+
+    position: absolute;
+    top: 30%;
+    right: 25;
+  }
+
+  &__title {
+    @include mix.heading-sm;
+
+    @media (min-width: 768px) {
+      @include mix.heading-md;
+    }
+  }
+
+  &__units {
+    display: flex;
+
+    gap: 3rem;
+
+    &_label {
+      @include mix.body-md-bold;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 1.125rem;
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+
+        width: 50%;
+      }
+    }
+
+    &_input {
+      display: none;
+
+      &:checked + .bmiCalc__units_checked {
+        border: none;
+        background-color: color.scale(#345ff6, $lightness: 75%);
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 0.9375rem;
+          height: 0.9375rem;
+          border-radius: 50%;
+          background-color: var(--blue);
+        }
+      }
+    }
+
+    &_checked {
+      position: relative;
+
+      width: 1.9375rem;
+      height: 1.9375rem;
+      border-radius: 50%;
+      border: 0.0625rem solid var(--gun-metal);
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--blue);
+      }
+    }
+  }
+
+  &__details {
+    display: flex;
+
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      gap: 1.5rem;
+    }
+
+    &_metric {
+      flex-direction: column;
+      @media (min-width: 768px) {
+        flex-direction: row;
+      }
+    }
+
+    &_imperial {
+      flex-direction: column;
+    }
+
+    &_inputGroup {
+      @include mix.body-sm;
+      display: flex;
+      flex-direction: column;
+
+      gap: 0.5rem;
+      color: var(--dark-electric-blue);
+      width: 100%;
+    }
+
+    &_inputWrapper {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    &_label {
+      position: relative;
+
+      width: 100%;
+    }
+
+    &_input {
+      @include mix.heading-md;
+
+      width: 100%;
+      padding: 1.25rem 1.5rem;
+      border-radius: 0.75rem;
+      border: 0.0625rem solid var(--gun-metal);
+      cursor: pointer;
+
+      &:hover {
+        border-color: var(--blue);
+      }
+    }
+
+    &_inputUnit {
+      @include mix.heading-md;
+
+      position: absolute;
+      top: 50%;
+      right: 1.5rem;
+      transform: translateY(-50%);
+      color: var(--blue);
+    }
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+    padding: 2rem;
+    background-color: var(--blue);
+    color: var(--pure-white);
+    border-radius: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 1rem 5rem 5rem 1rem;
+    }
+
+    &_bmi {
+      display: flex;
+      flex-direction: column;
+
+      gap: 0.5rem;
+      @media (min-width: 768px) {
+        flex: 1;
+      }
+    }
+
+    &_text {
+      @include mix.body-md-bold;
+    }
+
+    &_noData {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &_welcome {
+      @include mix.heading-md;
+    }
+
+    &_value {
+      @include mix.heading-lg;
+
+      @media (min-width: 768px) {
+        @include mix.heading-xl;
+      }
+    }
+
+    &_message {
+      @include mix.body-sm;
+
+      @media (min-width: 768px) {
+        flex: 1;
+      }
+    }
+
+    &_ideal {
+      @include mix.body-md-bold;
+    }
+  }
+}

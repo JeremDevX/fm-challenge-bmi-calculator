@@ -1,0 +1,52 @@
+@mixin heading-xl {
+  font-size: 4rem;
+  line-height: 110%;
+  font-weight: 600;
+  letter-spacing: calc((4rem * 0.95 - 4rem));
+
+  @media (max-width: 767px) {
+    font-size: 3rem;
+  }
+}
+
+@mixin heading-lg {
+  font-size: 3rem;
+  line-height: 110%;
+  font-weight: 600;
+  letter-spacing: calc((3rem * 0.95 - 3rem));
+
+  @media (max-width: 1023px) {
+    font-size: 2rem;
+    letter-spacing: calc((2rem * 0.95 - 2rem));
+  }
+}
+
+@mixin heading-md {
+  font-size: 1.5rem;
+  line-height: 110%;
+  font-weight: 600;
+}
+
+@mixin heading-sm {
+  font-size: 1.25rem;
+  line-height: 110%;
+  font-weight: 600;
+}
+
+@mixin body-md {
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 300;
+}
+
+@mixin body-md-bold {
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+@mixin body-sm {
+  font-size: 0.875rem;
+  line-height: 150%;
+  font-weight: 300;
+}

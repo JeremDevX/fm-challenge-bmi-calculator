@@ -1,0 +1,194 @@
+@use "../styles/mixins" as mix;
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  gap: 3rem;
+  padding: 2rem 1.25rem 1.5rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 59%;
+    border-radius: 0 0 2.25rem 2.25rem;
+    background: var(--bg-gradient);
+    z-index: -1;
+
+    @media (min-width: 1024px) {
+      height: 100%;
+      width: 75%;
+    }
+  }
+
+  @media (min-width: 768px) {
+    padding: 2.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+
+    height: 737px;
+    margin-left: 0.5rem;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1.5rem;
+    text-align: center;
+
+    @media (min-width: 1024px) {
+      align-items: flex-start;
+
+      gap: 2.25rem;
+
+      position: absolute;
+      top: 33%;
+      left: 0;
+      transform: translateX(20%);
+
+      max-width: 564px;
+      margin-top: -4rem;
+      width: calc(100vw / 3);
+      text-align: left;
+    }
+  }
+
+  &__logo {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    @media (min-width: 1024px) {
+      width: 4rem;
+      height: 4rem;
+
+      transform: translateY(-200%);
+    }
+  }
+
+  &__title {
+    @include mix.heading-xl;
+
+    @media (min-width: 1024px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__description {
+    @include mix.body-md;
+    color: var(--dark-electric-blue);
+    @media (min-width: 1024px) {
+      width: 85%;
+    }
+  }
+}
+
+.bmiInfo {
+  display: flex;
+  flex-direction: column;
+
+  position: relative;
+
+  gap: 2rem;
+
+  &::before {
+    @media (min-width: 1024px) {
+      content: "";
+      position: absolute;
+
+      top: 0;
+      right: 5%;
+      transform: translateY(-25%);
+
+      width: 86px;
+      height: 201px;
+      background-image: url("../../public/images/pattern-curved-line-left.svg");
+    }
+  }
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4.5rem;
+    margin-left: -6rem;
+  }
+
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+    align-items: flex-end;
+
+    width: 100%;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 0 0 1rem;
+  }
+
+  &__image {
+    @media (min-width: 768px) {
+      max-width: 435px;
+    }
+    @media (min-width: 1024px) {
+      max-width: 564px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1.5rem;
+    padding: 0 1.25rem;
+
+    @media (min-width: 768px) {
+      padding: 0 0.625rem 0 0;
+    }
+
+    @media (min-width: 1024px) {
+      gap: 2.25rem;
+      max-width: 465px;
+      margin-bottom: 1.5rem;
+    }
+
+    &_title {
+      @include mix.heading-lg;
+    }
+
+    &_description {
+      @include mix.body-md;
+      color: var(--dark-electric-blue);
+    }
+  }
+}
+
+.bmiTipsSection {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2.5rem;
+  padding: 2rem 0;
+  background: var(--bg-gradient);
+  background-size: 400%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+
+    gap: 2rem;
+    padding: 5.5rem 3.5rem;
+    margin: 0 1.5rem;
+    border-radius: 2.25rem;
+  }
+}
